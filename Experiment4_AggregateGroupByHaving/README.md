@@ -38,124 +38,196 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+How many patients are covered by each insurance company?
+
+Sample table:Insurance Table
+
+name               type
+-----------------  ----------
+InsuranceID        INTEGER
+PatientID          INTEGER
+InsuranceCompany   TEXT
+PolicyNumber       TEXT
+PolicyHolder       TEXT
+ValidityPeriod     TEXT
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT InsuranceCompany, COUNT(*) AS TotalPatients FROM Insurance GROUP BY InsuranceCompany;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-05-19 185347](https://github.com/user-attachments/assets/67997298-ae32-4a2d-a74c-0197c8ba57c6)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+What is the total number of medications prescribed for each patient?
+
+Sample tablePrescriptions Table
+
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT PatientID,COUNT(*) AS TotalMedications FROM Prescriptions GROUP BY(PatientID);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-05-19 185425](https://github.com/user-attachments/assets/d83b7f5a-9b06-4ff6-a965-0cd0507908f2)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+How many doctors specialize in each medical specialty?
+
+Sample table:Doctors Table
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT Specialty , COUNT(*) AS TotalDoctors FROM Doctors GROUP BY Specialty;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-05-19 185459](https://github.com/user-attachments/assets/9b9868f7-3838-4ce7-9518-8b22fb9d92bb)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to find how many employees have an income greater than 50K?
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT COUNT(name) AS employees_count FROM employee WHERE income > 50000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/4425e139-a5ed-4eb4-8751-09bc83321bbf)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to find the shortest email address in the customer table?
+
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT   
+city        TEXT
+email       TEXT
+phone       INTEGER
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT name , email,MIN(LENGTH(email)) AS min_email_length FROM customer; 
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/5099670d-1603-42c2-b9b3-bba3e8b04723)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to find the total amount of fruits with a unit type of 'LB'.
+
+Note: Inventory attribute contains amount of fruits
+
+Table: fruits
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+unit        TEXT
+inventory   INTEGER
+price       REAL
+ 
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT SUM(inventory) AS total FROM fruits WHERE unit = 'LB';
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/d55f5ee5-901c-4ea0-84d3-bd029625a838)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to return the total number of rows in the 'customer' table where the city is not Noida.
+
+Sample table: customer
+
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT COUNT(*) AS COUNT FROM customer WHERE city <> 'Noida';
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/48bfa0fe-fcbe-420e-82bd-86374b069cd1)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the total work hours for each occupation, and excludes occupations where the total work hour sum is not greater than 20.
+
+Sample table: employee1
+
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT occupation,SUM(workhour) FROM employee1 GROUP BY occupation HAVING SUM(workhour) > 20;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-05-19 185839](https://github.com/user-attachments/assets/0fbb5ca6-b2ab-4bbb-93e0-d67e16ee3bc0)
+
 
 **Question 9**
----
--- Paste Question 9 here
+Write the SQL query that accomplishes the grouping of data by age, calculates the maximum income for each age group, and includes only those age groups where the maximum income is greater than 2,000,000.
+
+Sample table: employee
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT age, MAX(income) FROM employee GROUP BY age HAVING MAX(income) > 2000000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/6f26ecca-ef93-49a1-892f-07da55813eab)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query that accomplishes the grouping of data by age, calculates the average income for each age group, and includes only those age groups where the average income falls between 300,000 and 500,000.
+
+Sample table: employee
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT age , AVG(income) FROM employee GROUP BY age HAVING AVG(income) BETWEEN 300000 AND 500000;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/4c09c570-54a8-408c-8324-9f9fb7f756a5)
+
 
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
+![image](https://github.com/user-attachments/assets/fea05eaf-f4cd-483f-a006-46e5691148fc)
+
