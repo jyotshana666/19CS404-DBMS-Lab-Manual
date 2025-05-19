@@ -343,3 +343,5 @@ select CustomerID, Name, Address, Email from Old_customers;
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
+![GRADES](https://github.com/user-attachments/assets/b6602c23-1ee2-442f-af43-b738cd5cd2af)
+
