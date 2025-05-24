@@ -465,3 +465,5 @@ WHERE
 
 ## RESULT
 Thus, the SQL queries to implement different types of joins have been executed successfully.
+![Screenshot 2025-05-24 200612](https://github.com/user-attachments/assets/38cd101f-b1de-4cf4-96b6-b8572b03f85e)
+
